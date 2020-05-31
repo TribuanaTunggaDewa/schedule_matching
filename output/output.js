@@ -24,9 +24,8 @@ exports.print = (array, n) => {
             count += 1
         }
     }
-
-    console.log(result)
     
+
     if(count < n){
         console.log('Tidak ada lagi jadwal yang tersedia')
     }
