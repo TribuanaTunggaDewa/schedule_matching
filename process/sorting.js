@@ -1,4 +1,4 @@
-exports.sort = (array,t) => {
+exports.sort = (array, t) => {
 
     result = {}
     data = array
@@ -24,7 +24,7 @@ smallest = (array) => {
     console.log(t)
 
     smallestRange =smallestRange.filter(element => {
-        return element.range > t
+        return element.range >= t
     })
     
     return smallestRange

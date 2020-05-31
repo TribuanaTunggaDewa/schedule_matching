@@ -6,9 +6,11 @@ const categorize = require('./process/categorize')
 const sorting = require('./process/sorting')
 const compare = require('./process/compare')
 const output = require('./output/output')
+const sliceObj = require('./process/sliceObject')
 
 main = async () => {
     let result = []
+    let bind = []
     let fileName = await Input.read()
     let fileContent = await File.read(fileName).catch(err => {
         console.log(err)
@@ -25,20 +27,20 @@ main = async () => {
     collect = categorize.collect(listFreetime)
     sort = sorting.sort(collect, t)
     for(key in sort){
-        bind =  compare.compare( sort[key], listFreetime, [key])
-        // if(bind.length == 0){
-        //     continue
-        // }
-        console.log([key])
-        result[key] = bind
-        if(Object.keys(result).length >= n){
-            break
-        }
-
+        bind[key] =  compare.compare( sort[key], listFreetime, [key])
     }
+    for(key in bind){
+        if(bind[key].length == 0){
+            continue
+        }
+        result[key] = bind[key]
+    }
+    
+    slice = sliceObj.objSlice(result, n)
+    
+    console.log(slice)
 
-    //console.log(result)
-    //output.print(result)
+    output.print(slice)
 
     
 }
