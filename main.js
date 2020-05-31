@@ -24,19 +24,18 @@ main = async () => {
     listFreetime = freetime.getTime(json.data)
     collect = categorize.collect(listFreetime)
     sort = sorting.sort(collect, t)
-    console.log(n)
     for(key in sort){
-        result[key] =  compare.compare( sort[key], listFreetime, [key])
+        bind =  compare.compare( sort[key], listFreetime, [key])
+        if(bind.length == 0){
+            continue
+        }
+        result[key] = bind
         if(Object.keys(result).length >= n){
             break
         }
 
     }
-
-    //console.log(result)
-    output.print(result)
-
-    
+    output.print(result)  
 }
 
 main()

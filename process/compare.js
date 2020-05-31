@@ -3,9 +3,6 @@ exports.compare = ( d, p, char) => {
     char = char
 
 
-    if(char == 'M'){
-      console.log(d)
-    }
 
     for(i=0; i < d.length; i++){
       for(j=0; j < p.length; j++ ){
@@ -37,7 +34,11 @@ exports.compare = ( d, p, char) => {
         }
       }
     }
+    
     match = chunk(match, p.length)
+
+
+
     match = match.map(element => {
         return element.filter(item =>{
           return item != null
@@ -56,6 +57,7 @@ exports.compare = ( d, p, char) => {
     d = d.filter(element => {
       return element.result.length == p.length
     })
+
 
     return d
 
