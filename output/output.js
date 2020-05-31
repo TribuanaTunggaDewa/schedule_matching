@@ -9,19 +9,25 @@ exports.print = (array, n) => {
         })
     }
 
+    count = 0
+
     for(i=0; i < result.length; i++){
         if(i == 0){
-            console.log(`${result[i].key} : ${result[i].value}`)
+            console.log(`${result[i].key} : ${result[i].value[0]} ${result[i].value[1]}`)
+            count += 1
         }
         else{
             if((result[i].key == result[i-1].key) && (result[i].value[0] == result[i-1].value[0] && result[i].value[1] == result[i-1].value[1])){
                 continue
             }
-            console.log(`${result[i].key} : ${result[i].value}`)
+            console.log(`${result[i].key} : ${result[i].value[0]} ${result[i].value[1]}`)
+            count += 1
         }
     }
 
-    if(result.length < n){
+    console.log(result)
+    
+    if(count < n){
         console.log('Tidak ada lagi jadwal yang tersedia')
     }
 
