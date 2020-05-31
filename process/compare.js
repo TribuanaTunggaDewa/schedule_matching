@@ -3,10 +3,6 @@ exports.compare = ( d, p, char) => {
     char = char
 
 
-    if(char == 'M'){
-      console.log(d)
-    }
-
     for(i=0; i < d.length; i++){
       for(j=0; j < p.length; j++ ){
         for(key in p[j]){
