@@ -30,7 +30,6 @@ main = async () => {
         if(Object.keys(result).length >= n){
             break
         }
-
     }
 
     //console.log(result)
