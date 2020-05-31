@@ -26,16 +26,21 @@ main = async () => {
     sort = sorting.sort(collect, t)
     for(key in sort){
         bind =  compare.compare( sort[key], listFreetime, [key])
-        if(bind.length == 0){
-            continue
-        }
+        // if(bind.length == 0){
+        //     continue
+        // }
+        console.log([key])
         result[key] = bind
         if(Object.keys(result).length >= n){
             break
         }
 
     }
-    output.print(result)  
+
+    //console.log(result)
+    //output.print(result)
+
+    
 }
 
 main()
