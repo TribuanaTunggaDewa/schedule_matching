@@ -20,7 +20,7 @@ smallest = (array) => {
     smallestRange = smallestRange.sort((a, b) => (a.range > b.range) ? 1 : -1)
 
     smallestRange =smallestRange.filter(element => {
-        return element.range > t
+        return element.range >= t
     })
     
     return smallestRange
