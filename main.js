@@ -37,7 +37,7 @@ main = async () => {
     }
     
     slice = sliceObj.objSlice(result, n)
-    output.print(slice)
+    output.print(slice, n)
 
 }
 

@@ -1,4 +1,4 @@
-exports.print = (array) => {
+exports.print = (array, n) => {
     result = []
     data = array
     //key = Object.keys(data)
@@ -19,6 +19,10 @@ exports.print = (array) => {
             }
             console.log(`${result[i].key} : ${result[i].value}`)
         }
+    }
+
+    if(result.length < n){
+        console.log('Tidak ada lagi jadwal yang tersedia')
     }
 
     // for(i=0; i < key.length; i++){
