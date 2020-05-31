@@ -3,8 +3,12 @@ const Input = require('./input/inputOperation')
 const object = require('./process/objectMapping')
 const freetime = require('./process/getFreetime')
 const categorize = require('./process/categorize')
+const sorting = require('./process/sorting')
+const compare = require('./process/compare')
+const output = require('./output/output')
 
 main = async () => {
+    let result = []
     let fileName = await Input.read()
     let fileContent = await File.read(fileName).catch(err => {
         console.log(err)
@@ -15,13 +19,24 @@ main = async () => {
         console.log(`${json.t} bukan kelipatan 30 mohon gunakan angka dengan kelipatan 30`)
         process.exit(1)
     }
-    console.log(json)
     n = json.n
     t = json.t
     listFreetime = freetime.getTime(json.data)
-    console.log(listFreetime)
     collect = categorize.collect(listFreetime)
-    console.log(collect)
+    sort = sorting.sort(collect, t)
+    console.log(n)
+    for(key in sort){
+        result[key] =  compare.compare( sort[key], listFreetime, [key])
+        if(Object.keys(result).length >= n){
+            break
+        }
+
+    }
+
+    //console.log(result)
+    output.print(result)
+
+    
 }
 
 main()
