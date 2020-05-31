@@ -39,7 +39,7 @@ main = async () => {
         result[key] = bind[key]
     }
 
-    console.log(result.M)
+    console.log(result)
     
     slice = sliceObj.objSlice(result, n)
     output.print(slice, n)
