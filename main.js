@@ -17,6 +17,7 @@ main = async () => {
         process.exit(1)
     })
     json = object.mapping(fileContent)
+    console.log(json)
     if(parseInt(json.t) % 30 != 0){
         console.log(`${json.t} bukan kelipatan 30 mohon gunakan angka dengan kelipatan 30`)
         process.exit(1)
@@ -24,8 +25,10 @@ main = async () => {
     n = json.n
     t = json.t
     listFreetime = freetime.getTime(json.data)
+    console.log(listFreetime)
     collect = categorize.collect(listFreetime)
     sort = sorting.sort(collect, t)
+    console.log(sort)
     for(key in sort){
         bind[key] =  compare.compare( sort[key], listFreetime, [key])
     }
@@ -35,6 +38,8 @@ main = async () => {
         }
         result[key] = bind[key]
     }
+
+    console.log(result.M)
     
     slice = sliceObj.objSlice(result, n)
     output.print(slice, n)
