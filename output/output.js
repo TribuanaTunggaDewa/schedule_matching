@@ -35,8 +35,7 @@ exports.print = (array) => {
     //             }
     //             if()
     //         }
-    //     }
+        
     // }
-    console.log(data)
 
 }
