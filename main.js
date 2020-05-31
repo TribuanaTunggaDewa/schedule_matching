@@ -37,12 +37,8 @@ main = async () => {
     }
     
     slice = sliceObj.objSlice(result, n)
-    
-    console.log(slice)
-
     output.print(slice)
 
-    
 }
 
 main()

@@ -19,7 +19,6 @@ smallest = (array) => {
     
     smallestRange = smallestRange.sort((a, b) => (a.range > b.range) ? 1 : -1)
 
-    t = 60
 
     console.log(t)
 
