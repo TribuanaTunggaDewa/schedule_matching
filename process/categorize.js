@@ -17,5 +17,6 @@ exports.collect = (array) => {
                 
         }
     }
+
     return collectionTime
 }

@@ -29,7 +29,10 @@ main = async () => {
 
     collect = categorize.collect(listFreetime)
 
+    
     sort = sorting.sort(collect, t)
+
+    
 
     for(key in sort){
         bind[key] =  compare.compare( sort[key], listFreetime, [key])
@@ -40,6 +43,7 @@ main = async () => {
         }
         result[key] = bind[key]
     }
+
     
     slice = sliceObj.objSlice(result, n)
     output.print(slice, n)
